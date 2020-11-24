@@ -17,14 +17,21 @@
     <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
     <!--当把网站添加到桌面后，可以通过该标签设置启动webapp时的启动页面-->
     <!--适配iPhone5+和iPhone retina-->
+    <!--px表示像素，分辨率的单位，表示屏幕用来成像的点的数量，例如80*60，则每一行有80个像素点，每一列有60个像素点-->
     <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!--iPhone 5+-->
     <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
     <!--删除默认的苹果工具栏和菜单栏，如果要保留，则不需要添加或设置为no-->
     <meta name="apple-mobile-web-app-capable", content="yes">
     <!--控制手机最上方的状态栏背景颜色，默认为白色，可以设置为黑色black和灰白色black-translucent-->
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
-    
+    <!--针对手持设备优化，主要针对一些老的不识别viewport的浏览器，例如黑莓-->
+    <meta name="HandheldFriendly" content="True">
+    <!--针对微软的老式浏览器优化-->
+    <meta name="MobileOptimized" content="320">
+    <!--对视区进行设置，即网页的可视区域；device-width为设备宽度，initial-scala为出事缩放比例-->
+    <!--maximum-scale为允许用户缩放的最大比例，user-scalable表示用户是否可以手动缩放-->
+    <!--target-densitydpi像素点的密度(density)，单位为dpi，表示每英寸像素点的数量，值取"device-width"表示将设备原本的dp设置为目标dp-->
+    <meta name="viewport" content="device-width, initial-scale=1.0,  maximum-scale=1, user-scalable=no, minimal-ui">
   </head>
 <body>
   <div style="color:#0000FF">
@@ -36,92 +43,3 @@
   </div>
 </body>
 </html>
-
-
-
-<!-- <head>
-    <meta charset="utf-8">
-    <title>2048</title>
-  
-    <link href="style/main.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-    <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-    <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
-  </head> -->
-
-
-  <body>
-  <div class="container">
-    <div class="heading">
-      <h1 class="title">2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
-      </div>
-    </div>
-
-    <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
-    </div>
-
-    <div class="game-container">
-      <div class="game-message">
-        <p></p>
-        <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-      </div>
-
-      <div class="tile-container">
-
-      </div>
-    </div>
-
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
-    </p>
-    <hr>
-    <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
-    </p>
-    <hr>
-    <p>
-    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
-    </p>
-  </div>
