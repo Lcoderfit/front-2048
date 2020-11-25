@@ -1,0 +1,15 @@
+
+/*
+font-size表示字体大小
+font-weight表示字体宽度，bold表示加粗
+margin表示外边距，
+display设置显示效果，inline前后不带有换行，none表示元素不显示，block表示元素前后带有换行
+float用于元素浮动，left表示元素向左浮动(即出现在该行的最左边)
+*/
+h1.title {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    display: block;
+    float: right;
+}
