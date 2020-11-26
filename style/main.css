@@ -1,3 +1,32 @@
+@import url(fonts/clear-sans.css);
+
+/*
+css基础选择器分类：
+1.元素选择器：标签名 {}
+2.ID选择器：#ID名 {}
+3.类选择器：.class名 {}
+4.通配符选择器：* {}
+5.组合选择器, html, body {}
+
+margin是指外边距，padding指的是内边距；上下左右四个方向的顺序为顺时针
+margin: 10px 表示内容距外边距上下左右均为10px
+margin: 10px 20px 表示上下外边距10px，左右外边距20px
+margin: 10px 20px 30px 表示上边距10px，左右边距20px，下边距30px
+
+#faf8ef中的6位16进制两位为一组，分别表示红、绿、蓝
+#FF0000表示红色，#00FF00表示绿色，#0000FF表示蓝色
+当1，2位相同且3，4位相同且5，6位相同时，可以缩写，
+例如#FF0000可缩写为#F00
+也可用rgb(255, 0, 0)表示红色，或者直接用 red, 例如：{color: red}
+
+backgroud用于设置背景颜色，color用于设置元素的文本颜色
+font-family设置段落字体，如果浏览器不支持第一个字体名称，则会选择第二个，只有当字体名中包含空格时，才需要使用引号括起来
+例如"Clear Sans", 当浏览器不支持这些字体时，则会选择一种sans-serif字体，
+所以设置的时候最后一个字体需要设置为一个通用的字体系列。
+
+font-size设置文本大小
+*/
+
 html,
 body {
     margin: 0;
@@ -6,6 +35,10 @@ body {
     color: #776e65;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
+}
+
+body {
+    margin: 80px 0;
 }
 
 
@@ -50,6 +83,51 @@ text-align: 设置文本对齐方式
 .best-container::after {
     content: "Best";
 }
+
+
+/*
+css选择器的三种分割形式
+1. .a.b 连写形式，当前元素同时具备两种类才会生效
+2. .a, .b  逗号分隔，当前元素只要有其中一个就会生效
+3. .a .b 通过空格隔开，当元素class包含"a", 字元素class包含"b"时生效
+
+position设置元素的定位类型，relative表示相对定位
+inline-block表示行内块元素
+line-height设置行间距
+font-weight设置字体宽度，bold表示加粗
+border-radius添加圆角边框
+margin-top设置元素的上外边距
+*/
+
+.score-container,
+.best-container {
+    position: relative;
+    display: inline-block;
+    background: #bbada0;
+    padding: 15px 25px;
+    font-size: 25px;
+    height: 25px;
+    line-height: 47px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
+    text-align: center;
+}
+
+
+/* .score-container:after,
+.best-container:after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da;
+} */
 
 
 /*
