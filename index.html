@@ -4,53 +4,55 @@
 <html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8">
-  <title>2048</title>
+    <meta charset="UTF-8">
+    <title>2048</title>
 
-  <!--link用于链接到外部资源，一般用于链接样式表-->
-  <!--href定义被链接的外部资源的路径，rel定义当前文档与外部资源的关系，stylesheet表示样式表-->
-  <!--type定义被链接文档的MIME类型-->
-  <link rel="stylesheet" href="style/main.css" type="text/css">
-  <!--设置网站图标，shortcut icon表示为标签title设置图标，favicon.ico一般放在项目根目录下-->
-  <link rel="shortcut icon" href="favicon.ico">
-  <!--IOS设备专有标签，IOS设备可以将网站添加到主屏幕上，该标签可以设置当添加网站到主屏幕上时使用指定图标-->
-  <!--推荐使用png图标，可以用sizes标签支持多种设备-->
-  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <!--当把网站添加到桌面后，可以通过该标签设置启动webapp时的启动页面-->
-  <!--适配iPhone5+和iPhone retina-->
-  <!--px表示像素，分辨率的单位，表示屏幕用来成像的点的数量，例如80*60，则每一行有80个像素点，每一列有60个像素点-->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png"
-    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
-  <!--iPhone 5+-->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"
-    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
-  <!--删除默认的苹果工具栏和菜单栏，如果要保留，则不需要添加或设置为no-->
-  <meta name="apple-mobile-web-app-capable" , content="yes">
-  <!--控制手机最上方的状态栏背景颜色，默认为白色，可以设置为黑色black和灰白色black-translucent-->
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <!--针对手持设备优化，主要针对一些老的不识别viewport的浏览器，例如黑莓-->
-  <meta name="HandheldFriendly" content="True">
-  <!--针对微软的老式浏览器优化-->
-  <meta name="MobileOptimized" content="320">
-  <!--对视区进行设置，即网页的可视区域；device-width为设备宽度，initial-scala为出事缩放比例-->
-  <!--maximum-scale为允许用户缩放的最大比例，user-scalable表示用户是否可以手动缩放-->
-  <!--target-densitydpi像素点的密度(density)，单位为dpi，表示每英寸像素点的数量，值取"device-width"表示将设备原本的dp设置为目标dp-->
-  <meta name="viewport" content="device-width, initial-scale=1.0,  maximum-scale=1, user-scalable=no, minimal-ui">
+    <!--link用于链接到外部资源，一般用于链接样式表-->
+    <!--href定义被链接的外部资源的路径，rel定义当前文档与外部资源的关系，stylesheet表示样式表-->
+    <!--type定义被链接文档的MIME类型-->
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <!--设置网站图标，shortcut icon表示为标签title设置图标，favicon.ico一般放在项目根目录下-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--IOS设备专有标签，IOS设备可以将网站添加到主屏幕上，该标签可以设置当添加网站到主屏幕上时使用指定图标-->
+    <!--推荐使用png图标，可以用sizes标签支持多种设备-->
+    <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+    <!--当把网站添加到桌面后，可以通过该标签设置启动webapp时的启动页面-->
+    <!--适配iPhone5+和iPhone retina-->
+    <!--px表示像素，分辨率的单位，表示屏幕用来成像的点的数量，例如80*60，则每一行有80个像素点，每一列有60个像素点-->
+    <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+    <!--iPhone 5+-->
+    <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+    <!--删除默认的苹果工具栏和菜单栏，如果要保留，则不需要添加或设置为no-->
+    <meta name="apple-mobile-web-app-capable" , content="yes">
+    <!--控制手机最上方的状态栏背景颜色，默认为白色，可以设置为黑色black和灰白色black-translucent-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--针对手持设备优化，主要针对一些老的不识别viewport的浏览器，例如黑莓-->
+    <meta name="HandheldFriendly" content="True">
+    <!--针对微软的老式浏览器优化-->
+    <meta name="MobileOptimized" content="320">
+    <!--对视区进行设置，即网页的可视区域；device-width为设备宽度，initial-scala为出事缩放比例-->
+    <!--maximum-scale为允许用户缩放的最大比例，user-scalable表示用户是否可以手动缩放-->
+    <!--target-densitydpi像素点的密度(density)，单位为dpi，表示每英寸像素点的数量，值取"device-width"表示将设备原本的dp设置为目标dp-->
+    <meta name="viewport" content="device-width, initial-scale=1.0,  maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 
 <body>
-  <!--块元素，可以对整个块设置相同的样式-->
-  <div class="container">
-    <div class="heading">
-      <h1 class="title">2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
-      </div>
-    </div>
+    <!--块元素，可以对整个块设置相同的样式-->
+    <div class="container">
+        <div class="heading">
+            <h1 class="title">2048</h1>
+            <div class="scores-container">
+                <div class="score-container">0</div>
+                <div class="best-container">0</div>
+            </div>
+        </div>
 
-    
-  </div>
+        <div class="above-game">
+            <p class="game-intro">赶快加入我们，一起来玩<strong>2048</strong>吧</p>
+            <a class="restart-button">新游戏</a>
+        </div>
+
+    </div>
 </body>
 
 </html>

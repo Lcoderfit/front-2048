@@ -70,26 +70,10 @@ text-align: 设置文本对齐方式
 
 
 /*
-1.双冒号表示伪元素，在CSS2中用单引号，CSS3中用双引号表示，与伪类区分
-2.用于向某些选择器设置特殊效果，after表示在元素内容后面插入content表示的内容，
-即在元素内容前插入"分数"
-3.before表示在前面插入
-*/
-
-.score-container::after {
-    content: "Score";
-}
-
-.best-container::after {
-    content: "Best";
-}
-
-
-/*
 css选择器的三种分割形式
 1. .a.b 连写形式，当前元素同时具备两种类才会生效
 2. .a, .b  逗号分隔，当前元素只要有其中一个就会生效
-3. .a .b 通过空格隔开，当元素class包含"a", 字元素class包含"b"时生效
+3. .a .b 通过空格隔开，当元素class包含"a", 子元素class包含"b"时生效
 
 position设置元素的定位类型，relative表示相对定位
 inline-block表示行内块元素
@@ -116,8 +100,14 @@ margin-top设置元素的上外边距
 }
 
 
-/* .score-container:after,
-.best-container:after {
+/*
+position设置元素的定位类型，absolute表示绝对定位
+text-transform对元素文本进行字符串操作，uppercase表示全部大写
+line-height设置行间距
+*/
+
+.score-container::after,
+.best-container::after {
     position: absolute;
     width: 100%;
     top: 10px;
@@ -127,7 +117,23 @@ margin-top设置元素的上外边距
     line-height: 13px;
     text-align: center;
     color: #eee4da;
-} */
+}
+
+
+/*
+1.双冒号表示伪元素，在CSS2中用单引号，CSS3中用双引号表示，与伪类区分
+2.用于向某些选择器设置特殊效果，after表示在元素内容后面插入content表示的内容，
+即在元素内容前插入"分数"
+3.before表示在前面插入
+*/
+
+.score-container::after {
+    content: "Score";
+}
+
+.best-container::after {
+    content: "Best";
+}
 
 
 /*
@@ -148,4 +154,53 @@ margin-bottom表示下外边框
     content: "";
     display: block;
     clear: both;
+}
+
+
+/*
+display设置为block表示该元素前后带有换行符
+clear设置为both表示两侧均不允许出现浮动元素
+*/
+
+.above-game::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/*
+margin-bottom表示下外边距
+box-sizing表示设置？？？？
+*/
+
+.game-intro {
+    float: left;
+    line-height: 42px;
+    margin-bottom: 0;
+    width: 55%;
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.65;
+}
+
+.restart-button {
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    display: block;
+    text-align: center;
+    float: right;
+}
+
+.restart-button {
+    width: 42%;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 2px;
 }
